@@ -3,46 +3,42 @@
 👋 Hi!
 
 Welcome to this course on React Suspense.  
-Here we'll cover the `Suspense` component and it's impact on component authoring, organization, and rendering.  
+Here we'll cover the `Suspense` component and it's impact on component authoring, organization, and rendering.
 
-If you have questions, hit me up on twitter — [@chantastic](https://twitter.com/chantastic) — or via email (in my [Github bio](https://github.com/chantastic/)).  
+If you have questions, hit me up on twitter — [@chantastic](https://twitter.com/chantastic) — or via email (in my [Github bio](https://github.com/chantastic/)).
 
 ## Who is this for?
 
 This is an advanced course in React.  
-I assume that you've built applications in React.  
+I assume that you've built applications in React.
 
 You could absolutely follow this tutorial with no React experience.  
-However, the patterns I'll demonstrate here won't feel necessary unless you've worked in a compelex codebase.  
+However, the patterns I'll demonstrate here won't feel necessary unless you've worked in a compelex codebase.
 
 The goal of this course isn't to teach React from scratch  
-But demonstrate how thinking in Suspense will change your components and organizational structures.  
+But demonstrate how thinking in Suspense will change your components and organizational structures.
 
 ## Why should you care?
 
 Suspense is going to change everything about the way you interact with data.  
-It also changes everything about the way you control visual transitions between waiting and loaded states.  
+It also changes everything about the way you control visual transitions between waiting and loaded states.
 
-Those capabilities come with some pretty drastic changes to the way React renders components and the way you will organize and compose components.  
+Those capabilities come with some pretty drastic changes to the way React renders components and the way you will organize and compose components.
 
-## What's the goal of this course?  
+## What's the goal of this course?
 
 My goal is that you walk into Suspense with some good practices under your belt.  
 We'll start with an introduction to the basics of Suspense.  
 I'll show you how I like to author views and organize components in an application that uses Suspense.  
-We'll close with general component design and organization that I think will help you, regardless of Suspense.  
+We'll close with general component design and organization that I think will help you, regardless of Suspense.
 
 ## Installation and usage
 
-This is a standard `create-react-app` application.  
-* Clone the repo
-* Run `yarn` to install the deps
-* Run `yarn start` to start a development server
+This is a standard `create-react-app` application.
 
-### Codesandbox
-
-If you don't want to do all that cloning business,  
-Use codesandboxes' GitHub import option to get up and running in seconds.  
+- Clone the repo
+- Run `yarn` to install the deps
+- Run `yarn start` to start a development server
 
 ## Course organization
 

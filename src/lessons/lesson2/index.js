@@ -6,7 +6,9 @@ let PokemonCollection = createResource(() =>
 );
 
 function PokemonList() {
-  return PokemonCollection.read().results.map(p => <div>{p.name}</div>);
+  return PokemonCollection.read().results.map(p => (
+    <div key={p.name}>{p.name}</div>
+  ));
 }
 
 export default function() {
