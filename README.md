@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Build an App with React Suspense, Hooks, and Context
 
-## Available Scripts
+👋 Hi!
 
-In the project directory, you can run:
+Welcome to this course on React Suspense.  
+Here we'll cover the `Suspense` component and it's impact on component authoring, organization, and rendering.  
 
-### `yarn start`
+If you have questions, hit me up on twitter — [@chantastic](https://twitter.com/chantastic) — or via email (in my [Github bio](https://github.com/chantastic/)).  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Who is this for?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is an advanced course in React.  
+I assume that you've built applications in React.  
 
-### `yarn test`
+You could absolutely follow this tutorial with no React experience.  
+However, the patterns I'll demonstrate here won't feel necessary unless you've worked in a compelex codebase.  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The goal of this course isn't to teach React from scratch  
+But demonstrate how thinking in Suspense will change your components and organizational structures.  
 
-### `yarn build`
+## Why should you care?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Suspense is going to change everything about the way you interact with data.  
+It also changes everything about the way you control visual transitions between waiting and loaded states.  
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Those capabilities come with some pretty drastic changes to the way React renders components and the way you will organize and compose components.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What's the goal of this course?  
 
-### `yarn eject`
+My goal is that you walk into Suspense with some good practices under your belt.  
+We'll start with an introduction to the basics of Suspense.  
+I'll show you how I like to author views and organize components in an application that uses Suspense.  
+We'll close with general component design and organization that I think will help you, regardless of Suspense.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation and usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is a standard `create-react-app` application.  
+* Clone the repo
+* Run `yarn` to install the deps
+* Run `yarn start` to start a development server
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Codesandbox
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you don't want to do all that cloning business,  
+Use codesandboxes' GitHub import option to get up and running in seconds.  
 
-## Learn More
+## Course organization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+© 2019 Michael Chan
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
