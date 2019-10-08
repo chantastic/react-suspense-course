@@ -16,6 +16,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "workspaces": [
+    "react-cache"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
