@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Lesson5 as App } from "./lessons";
+import { Reference as App } from "./lessons";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.unstable_createRoot(document.getElementById("root")).render(<App />);
