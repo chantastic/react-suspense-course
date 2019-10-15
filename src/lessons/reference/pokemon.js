@@ -1,9 +1,14 @@
 import React from "react";
-import JSONI from "./jsoni";
+// import JSONI from "./jsoni";
 import { unstable_createResource as createResource } from "react-cache";
+import { Context as TitleContext } from "./title-controller";
+import sleep from "sleep-promise";
+import { NetworkContext } from "./network";
 
 let PokemonResource = createResource(id =>
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res =>
+    res.json().then(sleep(2500))
+  )
 );
 
 let ImageResource = createResource(
@@ -16,24 +21,25 @@ let ImageResource = createResource(
 );
 
 function Img({ src, alt, ...props }) {
-  return <img src={src} alt={alt} {...props} />;
+  return <img src={ImageResource.read(src)} alt={alt} {...props} />;
 }
 
 export function Pokemon({ id, ...props }) {
   let pokemon = PokemonResource.read(id);
-
-  React.useEffect(() => {
-    document.title = pokemon.name;
-  });
+  // let [, dispatch] = React.useContext(TitleContext);
+  let online = React.useContext(NetworkContext);
+  // dispatch({ action: "show_pokemon", payload: pokemon });
+  // console.log(dispatch);
 
   return (
     <React.Fragment>
-      <div {...props}>{pokemon.name}</div>
-      <img src={pokemon.sprites.front_default} />
-      <React.Suspense maxDuration={0} fallback="...loading image">
-        <Img src={ImageResource.read(pokemon.sprites.front_default)} />
-      </React.Suspense>
-      <JSONI>{pokemon}</JSONI>
+      <React.unstable_SuspenseList>
+        <div {...props}>{pokemon.name}</div>
+        <React.Suspense fallback="...finding image">
+          <Img src={pokemon.sprites.front_default} />
+          {online ? "online :)" : "offline :("}
+        </React.Suspense>
+      </React.unstable_SuspenseList>
     </React.Fragment>
   );
 }
@@ -56,9 +62,9 @@ export function PokemonList({
   ),
   ...props
 }) {
-  React.useEffect(() => {
-    document.title = "pokemon";
-  });
+  // React.useEffect(() => {
+  //   document.title = "pokemon";
+  // });
 
   let pokemonCollection = PokemonCollection.read();
   return <As {...props}>{pokemonCollection.results.map(renderItem)}</As>;
