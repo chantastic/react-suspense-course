@@ -1,21 +1,7 @@
 import React from "react";
 import ErrorBoundary from "./error-boundary";
-import { unstable_createResource as createResource } from "react-cache";
-const Pokemon = React.lazy(() => import("./pokemon"));
-
-let PokemonCollection = createResource(() =>
-  fetch("https://pokeapi.co/api/v2/pokemon").then(res => res.json())
-);
-
-function PokemonList() {
-  return (
-    <ul>
-      {PokemonCollection.read().results.map(pokemon => (
-        <li key={pokemon.name}>{pokemon.name}</li>
-      ))}
-    </ul>
-  );
-}
+import { PokemonList } from "./pokemon";
+const Pokemon = React.lazy(() => import("./pokemon-detail"));
 
 export default function() {
   return (
