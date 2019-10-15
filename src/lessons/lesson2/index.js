@@ -1,22 +1,12 @@
 import React from "react";
-import { unstable_createResource as createResource } from "react-cache";
-
-let PokemonCollection = createResource(() =>
-  fetch("https://pokeapi.co/api/v2/pokemon/").then(res => res.json())
-);
-
-function PokemonList() {
-  return PokemonCollection.read().results.map(p => (
-    <div key={p.name}>{p.name}</div>
-  ));
-}
+const Pokemon = React.lazy(() => import("./pokemon"));
 
 export default function() {
   return (
-    <div>
-      <React.Suspense fallback="loading">
-        <PokemonList />
+    <React.Fragment>
+      <React.Suspense fallback="Locating pokemon...">
+        <Pokemon />
       </React.Suspense>
-    </div>
+    </React.Fragment>
   );
 }

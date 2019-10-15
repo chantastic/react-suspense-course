@@ -1,8 +1,10 @@
 import React from "react";
-
-fetch("https://pokeapi.co/api/v2/pokemon/")
-  .then(res => res.json())
+import Pokemon from "./pokemon";
 
 export default function() {
-  return <div>Lesson One</div>;
+  return (
+    <React.Fragment>
+      <Pokemon />
+    </React.Fragment>
+  );
 }

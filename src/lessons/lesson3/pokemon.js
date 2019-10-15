@@ -8,13 +8,3 @@ let PokemonResource = createResource(() =>
 export default function Pokemon() {
   return <div>{PokemonResource.read().name}</div>;
 }
-
-// CHALLENGE:
-
-// break the api call
-// read the resulting error
-// copy the error boundary
-// change logging to console.log
-// show off what it does
-// customize ErrorBoundary with fallback, for parity with suspense
-// use defaultProps to do it
