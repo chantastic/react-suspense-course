@@ -1,5 +1,4 @@
 //    do this all in a leaf node of Pokemon and show how to elevate it to the app level thru the process
-
 // 1. let [online, updateOnline] = React.useState(true);
 // 2. use useEffect to track browser status
 //    remove event listeners (show in the console how many times it's run by switching online offline)
@@ -23,7 +22,7 @@ function useOnLine() {
   React.useEffect(() => {
     window.addEventListener("online", updateOnlineStatus);
     window.addEventListener("offline", updateOnlineStatus);
-    console.log("adding listeners");
+    // console.log("adding listeners");
 
     return function() {
       window.removeEventListener("online", updateOnlineStatus);

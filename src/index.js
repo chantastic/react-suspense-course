@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Lesson13 as App } from "./lessons";
+import { Reference as App } from "./lessons";
 
-// ReactDOM.render(<App />, document.getElementById("root"));
-ReactDOM.unstable_createRoot(document.getElementById("root")).render(<App />);
+const rootElement = document.getElementById("root");
+
+// Sync Mode
+// ReactDOM.render(<App />, rootElement);
+
+// Concurrent Mode
+ReactDOM.unstable_createRoot(rootElement).render(<App />);

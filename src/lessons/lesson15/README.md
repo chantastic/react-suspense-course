@@ -1,25 +1,8 @@
-# Lesson13
+# Lesson15
 
-Modularizing fallbacks
+Hash params as cash index
 
 ## Challenge
-
-One question I get every time I teach this is "now, should I put the rendering component, Suspense, List and Error boundary in a single component since they're all required to work together?
-
-No.
-
-Because these parts are going to change as you add features.
-These are the nobs you'll need to have control over at a high level.
-
-But I DO like adding fallbacks to my modules.
-
-Let's do that.
-
-- Let's take the "Gotta catch 'em all" fallback and make it a component in `pokemon`
-  - use the React Dev Tools to check it
-- Extract the "Locating pokemon..." fallback as a component
-  - use the React Dev Tools to check it
-- Extract the ErrorBoundary fallback as a component into `pokemon`
 
 ## Next: Working with Suspense components
 

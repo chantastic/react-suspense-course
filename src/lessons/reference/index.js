@@ -1,42 +1,97 @@
 import React from "react";
 import ErrorBoundary from "./error-boundary";
-import { PokemonList } from "./pokemon";
+import { PokemonResource, PokemonList } from "./pokemon";
 import { NetworkController } from "./network";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route,
+  useParams
+} from "react-router-dom";
+import { useDocumentTitle, DocumentTitleContext } from "./document-title";
+
+import "../../style.css";
 
 const Pokemon = React.lazy(() => import("./pokemon-detail"));
 
-export default function() {
-  let [selectedPokemon, updateSelectedPokemon] = React.useState(1);
-  function renderPokemon(pokemon) {
-    return (
-      <li key={pokemon.id}>
-        <button onClick={() => updateSelectedPokemon(pokemon.id)}>
-          {pokemon.name}
-        </button>
-      </li>
-    );
-  }
+function PokemonView() {
+  let { pokemonId } = useParams();
+  let { name } = PokemonResource.read(pokemonId); // multiple reads shouldn't hurt because cashed
+  let baseTitle = React.useContext(DocumentTitleContext);
+
+  useDocumentTitle(
+    `${name.charAt(0).toUpperCase() + name.slice(1)} | ${baseTitle}`
+  );
 
   return (
-    <React.Fragment>
-      <NetworkController>
-        <ErrorBoundary fallback={<h1>...couldn't catch 'em all</h1>}>
-          <span>test</span>
-          <React.Suspense fallback="I choose you!">
-            <React.Fragment>
-              <button onClick={() => updateSelectedPokemon(0)}>back</button>
-              <Pokemon id={selectedPokemon} />
-            </React.Fragment>
-          </React.Suspense>
-          <React.Suspense fallback="...loading pokemon">
-            <PokemonList
-              as="ul"
-              className="pokemon-list"
-              renderItem={renderPokemon}
+    <React.Suspense fallback="awaiting Pokemon">
+      <Link to="/" className="button-back">
+        <span role="img" aria-label="finger pointing left">
+          👈
+        </span>{" "}
+        Back
+      </Link>
+      <Pokemon id={pokemonId} />
+    </React.Suspense>
+  );
+}
+
+function PokemonListView() {
+  let title = React.useContext(DocumentTitleContext);
+
+  useDocumentTitle(title);
+
+  return (
+    <React.Suspense fallback="awaiting pokemon list">
+      <PokemonList
+        as="ul"
+        className="pokemon-list"
+        params={{ limit: 30 }}
+        renderItem={pokemon => (
+          <Link
+            key={pokemon.id}
+            className="pokemon-list-item"
+            to={`/pokemon/${pokemon.id}`}
+          >
+            <img
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+              alt={pokemon.name}
+              width={50}
             />
-          </React.Suspense>
-        </ErrorBoundary>
-      </NetworkController>
+            {pokemon.name}
+          </Link>
+        )}
+      />
+    </React.Suspense>
+  );
+}
+
+export default function() {
+  return (
+    <React.Fragment>
+      <DocumentTitleContext.Provider value="Pokedex">
+        <h1 className="title">Pokedex</h1>
+        <div className="container">
+          <ErrorBoundary fallback={<h1>...couldn't catch 'em all</h1>}>
+            <React.Suspense fallback="test">
+              <Router>
+                <NetworkController>
+                  <Switch>
+                    <Route path="/pokemon/:pokemonId">
+                      <PokemonView />
+                    </Route>
+
+                    <Route>
+                      <PokemonListView />
+                    </Route>
+                  </Switch>
+                </NetworkController>
+              </Router>
+            </React.Suspense>
+          </ErrorBoundary>
+        </div>
+      </DocumentTitleContext.Provider>
     </React.Fragment>
   );
 }

@@ -1,57 +1,96 @@
 import React from "react";
-// import JSONI from "./jsoni";
 import { unstable_createResource as createResource } from "react-cache";
-import { Context as TitleContext } from "./title-controller";
-import sleep from "sleep-promise";
-import { NetworkContext } from "./network";
+import { TypeBadge } from "./type-badge";
 
-let PokemonResource = createResource(id =>
-  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res =>
-    res.json().then(sleep(2500))
-  )
+export const PokemonResource = createResource(id =>
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
 );
-
-let ImageResource = createResource(
-  src =>
-    new Promise(resolve => {
-      let img = new Image();
-      img.onload = () => resolve(src);
-      img.src = src;
-    })
-);
-
-function Img({ src, alt, ...props }) {
-  return <img src={ImageResource.read(src)} alt={alt} {...props} />;
-}
 
 export function Pokemon({ id, ...props }) {
   let pokemon = PokemonResource.read(id);
-  // let [, dispatch] = React.useContext(TitleContext);
-  let online = React.useContext(NetworkContext);
-  // dispatch({ action: "show_pokemon", payload: pokemon });
-  // console.log(dispatch);
 
   return (
-    <React.Fragment>
-      <React.unstable_SuspenseList>
-        <div {...props}>{pokemon.name}</div>
-        <React.Suspense fallback="...finding image">
-          <Img src={pokemon.sprites.front_default} />
-          {online ? "online :)" : "offline :("}
-        </React.Suspense>
-      </React.unstable_SuspenseList>
-    </React.Fragment>
+    <article>
+      <section className="detail-header">
+        <img
+          src={pokemon.sprites.front_default}
+          alt={`${pokemon.name}`}
+          width={200}
+        />
+
+        <div>
+          <h1 {...props} className="pokemon-title">
+            {pokemon.name}
+          </h1>
+
+          <div className="pokemon-type-container">
+            <h4>type: </h4>
+            <div>
+              {pokemon.types.map(({ type: { name } }) => {
+                return (
+                  <TypeBadge key={name} type={name}>
+                    {name}
+                  </TypeBadge>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="stats-grid">
+          <div className="stat-item">
+            <span className="stat-header">{pokemon.height}</span>
+            <span className="stat-body">Height</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-header">{pokemon.weight}</span>
+            <span className="stat-body">Weight</span>
+          </div>
+          <div className="stat-item">
+            {pokemon.abilities.map(({ ability }, i) => (
+              <span key={ability.name} className="stat-header-long">
+                {ability.name.replace("-", " ")}
+                {i !== pokemon.abilities.length - 1 && ", "}
+              </span>
+            ))}
+            <span className="stat-body">Abilities</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Stats</h2>
+
+        <div className="stats-grid">
+          {pokemon.stats.map(({ base_stat, stat }) => (
+            <div key={stat.name} className="stat-item">
+              <span className="stat-header">{base_stat}</span>
+              <span className="stat-body">{stat.name.replace("-", " ")}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
   );
 }
 
-let PokemonCollection = createResource(() =>
-  fetch("https://pokeapi.co/api/v2/pokemon")
+function hashParams(params = {}) {
+  let usps = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => usps.append(k, v));
+
+  return `?${usps.toString()}`;
+}
+
+const PokemonCollection = createResource(params => {
+  return fetch(`https://pokeapi.co/api/v2/pokemon${params}`)
     .then(res => res.json())
     .then(res => ({
       ...res,
       results: res.results.map(p => ({ ...p, id: p.url.split("/")[6] }))
-    }))
-);
+    }));
+});
 
 export function PokemonList({
   as: As = React.Fragment,
@@ -60,12 +99,10 @@ export function PokemonList({
       {name}
     </div>
   ),
+  params,
   ...props
 }) {
-  // React.useEffect(() => {
-  //   document.title = "pokemon";
-  // });
+  let pokemonCollection = PokemonCollection.read(hashParams(params));
 
-  let pokemonCollection = PokemonCollection.read();
   return <As {...props}>{pokemonCollection.results.map(renderItem)}</As>;
 }
