@@ -12,7 +12,7 @@ So what do we do about this `<ul>` wrapper now that we can dynamically change th
 - We can use a `React.Fragment` to get the same effect
   - now we can customize it like or `renderItem`
   - it's common practice to use an `as` prop for this
-  - now, by default, it renders without a wrapper. but we can provide one if we want — consistente with our `renderItem` function
+  - now, by default, it renders without a wrapper. but we can provide one if we want — consistent with our `renderItem` function
 
 ## Next: Working with Suspense components
 

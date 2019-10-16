@@ -13,4 +13,4 @@ This is helpful when implementing a request with url search parameters.
   - You'll likely want to use a hashing function
   - You could write your own (as I will) or use one from npm
 - Add search params to fetch request
-- Play with the search paramaters `limit` and `offset`
+- Play with the search parameters `limit` and `offset`

@@ -5,7 +5,7 @@ Wrap it all up in an ErrorBoundary.
 
 ## CHALLENGE
 
-- Break the fetch request by pointing it to a non-existant URL
+- Break the fetch request by pointing it to a non-existent URL
 - Follow the link in the resulting error to React's docs on the `ErrorBoundary` component
 - Copy/paste the `ErrorBoundary` component into your app — taking care to replace error logging with local logging like `console.log`
 - Allow use of a `fallback` prop like `React.Suspense`
