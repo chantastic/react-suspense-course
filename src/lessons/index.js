@@ -13,5 +13,5 @@ export { default as Lesson12 } from "./lesson12";
 export { default as Lesson13 } from "./lesson13";
 export { default as Lesson14 } from "./lesson14";
 export { default as Lesson15 } from "./lesson15";
-// export { default as Lesson16 } from "./lesson16";
+export { default as Lesson16 } from "./lesson16";
 export { default as Reference } from "./reference";

@@ -7,6 +7,13 @@ Here we'll cover the `Suspense` component and it's impact on component authoring
 
 If you have questions, hit me up on twitter — [@chantastic](https://twitter.com/chantastic) — or via email (in my [Github bio](https://github.com/chantastic/)).
 
+## WARNING!!!
+
+What we'll cover here is not "stable" React API.  
+It will likely change.
+In fact, many features that I used to teach have been removed and no replacement has been set.
+I suspect that things will stabelize by React Conf 2019 on October 24th.
+
 ## Who is this for?
 
 This is an advanced course in React.  
@@ -37,6 +44,7 @@ We'll close with general component design and organization that I think will hel
 This is a standard `create-react-app` application.
 
 - Clone the repo
+- CD into the project directory (`react-suspense-course` by default)
 - Run `yarn` to install the deps
 - Run `yarn start` to start a development server
 
