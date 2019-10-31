@@ -5,7 +5,7 @@ import { Reference as App } from "./lessons";
 const rootElement = document.getElementById("root");
 
 // Sync Mode
-ReactDOM.render(<App />, rootElement);
+// ReactDOM.render(<App />, rootElement);
 
 // Concurrent Mode
-// ReactDOM.unstable_createRoot(rootElement).render(<App />);
+ReactDOM.createRoot(rootElement).render(<App />);
