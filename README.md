@@ -50,6 +50,12 @@ This is a standard `create-react-app` application.
 
 ## Course organization
 
+- `/lessons` are all lessons live
+- lessons are chronological
+- each lesson has a `README.md` with a lesson description and assignment
+- every lesson is the solution to the lesson before it
+- `reference` is a completed application with everything in place
+
 © 2019 Michael Chan
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
