@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Reference as App } from "./lessons";
+import App from "./lessons/lesson2";
 
 const rootElement = document.getElementById("root");
 
