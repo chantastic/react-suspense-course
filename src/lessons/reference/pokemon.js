@@ -94,6 +94,7 @@ const PokemonCollection = createResource(params => {
 
 export function PokemonList({
   as: As = React.Fragment,
+  resource,
   renderItem = ({ id, name, ...props }) => (
     <div key={id} {...props}>
       {name}
@@ -102,7 +103,8 @@ export function PokemonList({
   params,
   ...props
 }) {
-  let pokemonCollection = PokemonCollection.read(hashParams(params));
+  // let pokemonCollection = PokemonCollection.read(hashParams(params));
+  let pokemonCollection = resource.collection.read();
 
   return <As {...props}>{pokemonCollection.results.map(renderItem)}</As>;
 }
