@@ -6,8 +6,8 @@ let PokemonResource = createResource(() =>
   fetch("https://pokeapi.co/api/v2/pokemon/1").then(res => res.json())
 );
 
-export function Pokemon() {
-  return <div>{PokemonResource.read().name}</div>;
+export function Pokemon({ resource, ...props }) {
+  return <div>{resource.read().name}</div>;
 }
 
 let PokemonCollection = createResource(() =>

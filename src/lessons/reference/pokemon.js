@@ -6,8 +6,106 @@ export const PokemonResource = createResource(id =>
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
 );
 
+function wrapPromise(promise) {
+  let status = "pending";
+  let result;
+  let suspender = promise.then(
+    r => {
+      status = "success";
+      result = r;
+    },
+    e => {
+      status = "error";
+      result = e;
+    }
+  );
+  return {
+    read() {
+      if (status === "pending") {
+        throw suspender;
+      } else if (status === "error") {
+        throw result;
+      } else if (status === "success") {
+        return result;
+      }
+    }
+  };
+}
+
+/*
+- write the function
+  - throw error
+  - throw thenable
+  - return data
+- resolve thenable: thenable.then(r => console.log(r))
+  - wrap in read to see that it keeps trying to resolve
+- evolve strategy to capture
+  - if (status === "pending") { throw suspender }
+ */
+function _wrapPromise(thenable) {
+  let status = "pending";
+  let result;
+  let suspender = thenable.then(
+    r => {
+      status = "success";
+      result = r;
+    },
+    e => {
+      status = "error";
+      result = e;
+    }
+  );
+
+  return {
+    read() {
+      if (status === "pending") {
+        throw suspender;
+      }
+      if (status === "error") {
+        throw result;
+      }
+      if (status === "success") {
+        return result;
+      }
+    }
+  };
+  // return {
+  //   read() {
+  //     throw thenable.then(r => console.log(r));
+  //     return {};
+  //     throw Error;
+  //   }
+  // };
+  // return {
+  //   read() {
+  //     throw thenable.then(
+  //       r => {
+  //         console.log(r);
+  //       },
+  //       e => {
+  //         console.log(e);
+  //       }
+  //     );
+  //     throw Error; // throw error
+  //     return {}; // return data
+  //   }
+  // };
+}
+
+function fetchPokemonData() {
+  let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res =>
+    res.json()
+  );
+
+  return {
+    pokemon: _wrapPromise(pokemon)
+  };
+}
+
+let resource = fetchPokemonData();
+
 export function Pokemon({ id, ...props }) {
-  let pokemon = PokemonResource.read(id);
+  let pokemon = resource.pokemon.read();
 
   return (
     <article>
