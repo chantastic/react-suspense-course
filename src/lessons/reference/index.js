@@ -14,7 +14,13 @@ import "../../style.css";
 // );
 //
 
-const PokemonDetail = React.lazy(() => import("./pokemon-detail"));
+const PokemonDetail = React.lazy(() =>
+  Promise.resolve({
+    default: function() {
+      return <div>Fake Module</div>;
+    }
+  })
+);
 
 function wrapPromise(promise) {
   let status = "pending";
