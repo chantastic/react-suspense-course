@@ -6,43 +6,7 @@ export const PokemonResource = createResource(id =>
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
 );
 
-function wrapPromise(promise) {
-  let status = "pending";
-  let result;
-  let suspender = promise.then(
-    r => {
-      status = "success";
-      result = r;
-    },
-    e => {
-      status = "error";
-      result = e;
-    }
-  );
-  return {
-    read() {
-      if (status === "pending") {
-        throw suspender;
-      } else if (status === "error") {
-        throw result;
-      } else if (status === "success") {
-        return result;
-      }
-    }
-  };
-}
-
-/*
-- write the function
-  - throw error
-  - throw thenable
-  - return data
-- resolve thenable: thenable.then(r => console.log(r))
-  - wrap in read to see that it keeps trying to resolve
-- evolve strategy to capture
-  - if (status === "pending") { throw suspender }
- */
-function _wrapPromise(thenable) {
+function suspensifyPromise(thenable) {
   let status = "pending";
   let result;
   let suspender = thenable.then(
@@ -69,27 +33,6 @@ function _wrapPromise(thenable) {
       }
     }
   };
-  // return {
-  //   read() {
-  //     throw thenable.then(r => console.log(r));
-  //     return {};
-  //     throw Error;
-  //   }
-  // };
-  // return {
-  //   read() {
-  //     throw thenable.then(
-  //       r => {
-  //         console.log(r);
-  //       },
-  //       e => {
-  //         console.log(e);
-  //       }
-  //     );
-  //     throw Error; // throw error
-  //     return {}; // return data
-  //   }
-  // };
 }
 
 function fetchPokemonData() {
@@ -98,7 +41,7 @@ function fetchPokemonData() {
   );
 
   return {
-    pokemon: _wrapPromise(pokemon)
+    pokemon: suspensify(pokemon)
   };
 }
 
