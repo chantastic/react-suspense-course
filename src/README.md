@@ -37,15 +37,15 @@ function PokemonSimple() {
 Gain control over asyncronous state transitions in your app. (concrete)
 Avoid common pain points in the Suspense API. (personal)
 
-## Import a Component Lazily with React.lazy and Suspense
+## Import Components Lazily with Suspense React.lazy
 ## Catch Errors with an Error Boundary Component
-## Understand how to Communicate with Suspense and Error Boundary Components
-## Wrap a Promise to Communicate Pending, Success, and Error states Suspense and Error Boundaries
-## Track Async Fetch Requests with React.useState
-## Enable Concurrent Mode with ReactDOM.createRoot to Take Advantage of React's Experimental Suspense Features
-## Delay Non User Blocking Updates with React.useTransition's startTransition function
+## Understand How React.lazy Communicates Loading Status to Suspense and Error Boundary Components
+## Wrap Promises to Communicate Pending, Error, and Success Status to Suspense and Error Boundaries
+## Track Async Requests with React.useState
+## Enable React's Experimental Suspense Features by Enabling Concurrent Mode with ReactDOM.createRoot
+## Deprioritize Non User-Blocking Updates with React.useTransition's startTransition function
 ## Bypass Receeded Views with React.useTrasition's timeoutMS option
-## Display Conditional Loading States with React.useTransition's isPending Boolean
+## Display Loading States Conditionally with React.useTransition's isPending Boolean
 ## Delay the Appearance of a Loading Spinner with CSS
 
 ## Hoist state?
