@@ -1,4 +1,4 @@
-# 103 Exercise
+# Exercise
 
 **DRAFT**
 

@@ -1,4 +1,4 @@
-# 101 Exercise
+# Exercise
 
 ## Import a Component Dynamically with Suspense and React.lazy
 

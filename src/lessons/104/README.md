@@ -1,4 +1,4 @@
-# 104 Exercise
+# Exercise
 
 // 1 change component to read pokemon.name
 // \* read from suspensify function

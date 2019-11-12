@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import App from "./lessons/106/app";
-import App from "./lessons/build-an-app-with-react-suspense copy/app";
+import App from "./lessons/106/app";
+// import App from "./lessons/build-an-app-with-react-suspense copy/app";
 
 const rootElement = document.getElementById("root");
 

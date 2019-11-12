@@ -43,15 +43,16 @@ Avoid common pain points in the Suspense API. (personal)
 - 102: Catch Errors with an Error Boundary Component
 - 103: Understand how to Communicate with Suspense and Error Boundary Components
 - 104: Wrap a Promise to Communicate Pending, Success, and Error states Suspense and Error Boundaries
-- 105: Track Fetch Requests with React.useState
-- 106: Enable Concurrent Mode with ReactDOM.createRoot to Take Advantage of React's Experimental Suspense Features
-- 107: Depriority of Non User Blocking Updates with React.useTransition's startTransition function
-- 108: Bypass Receeded Views with React.useTrasition's timeoutMS option
-- 109: Display Conditional Loading States with React.useTransition's isPending Boolean
-- 110: Delay the Appearance of a Loading Spinner with CSS
+- 105: Create a Module for Dynamic Data Fetching Functions
+- 106: Track Fetch Requests with React.useState
+- 107: Enable Concurrent Mode with ReactDOM.createRoot to Take Advantage of React's Experimental Suspense Features
+- 108: Depriority of Non User Blocking Updates with React.useTransition's startTransition function
+- 109: Bypass Receeded Views with React.useTrasition's timeoutMS option
+- 110: Display Conditional Loading States with React.useTransition's isPending Boolean
+- 111: Delay the Appearance of a Loading Spinner with CSS
 
-- 111: Refactor: Hoist Component State
-- 112: Review: \*\*Fetch a collection using
+- 112: Refactor: Hoist Component State
+- 113: Review: \*\*Fetch a collection using
 
 ##
 

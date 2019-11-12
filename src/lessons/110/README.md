@@ -1,19 +1,12 @@
 # Exercise
 
-We have here a component that show ...
-And it shows a DelaySpinner that is really helpful with slow internet speeds.
-But when we speed it up, we see this unsettling effect.
+useTransition provides a second argument.
+by convention, assigned as isPending.
 
-The spinner pops in for a split second with EVERY SINGLE REQUEST.
-That's not necessry or pleasent.
+we can use to provide immediate feedback to a user that work is happening.
 
-Again, we can fix this and React has a great article on this technique on the Concurrent docs — doc name.
+Let's use it to disable the button, as clicking it again might just delay things further.
 
-describe
+And for the fun of it, let's conditionally show an emoji spinner.
 
-So let's copy it and add it to our own component.
-
-Show online, fast, and slow
-
-Now that this is fleshed out.
-Let's move it into a new module for shared ui.
+Because this is quick and dirty, we can use a style tag to keep all this right inline.

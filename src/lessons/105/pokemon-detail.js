@@ -1,5 +1,4 @@
 import React from "react";
-import { fetchPokemon, suspensify } from "./api";
 
 function suspensify(promise) {
   let status = "pending";
@@ -30,7 +29,9 @@ function suspensify(promise) {
   };
 }
 
-let pokemon = suspensify(fetchPokemon(1));
+let pokemon = suspensify(
+  fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json())
+);
 
 export default function PokemonDetail() {
   return <div>{pokemon.read().name}</div>;
