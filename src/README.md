@@ -48,10 +48,12 @@ Avoid common pain points in the Suspense API. (personal)
 ## Display Conditional Loading States with React.useTransition's isPending Boolean
 ## Delay the Appearance of a Loading Spinner with CSS
 
-How do I transition
+## Hoist state?
 
 ## Gotcha: Always Wrap Suspendible Data in Compnonents
 ## Gotcha: Always Read Suspendible Data from Components
+
+How do I transition
 
 ## How to make a customizeable list component
 

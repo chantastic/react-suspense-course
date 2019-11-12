@@ -1,11 +1,12 @@
 import React from "react";
+import { DelaySpinner } from "./ui";
 import { fetchPokemon, suspensify } from "./api";
 
 let initialPokemon = suspensify(fetchPokemon(1));
 
 export default function PokemonDetail() {
   let [pokemonResource, setPokemonResource] = React.useState(initialPokemon);
-  let [startTransition] = React.useTransition({ timeoutMs: 500 });
+  let [startTransition, isPending] = React.useTransition({ timeoutMs: 1000 });
   let pokemon = pokemonResource.read();
 
   return (
@@ -14,6 +15,7 @@ export default function PokemonDetail() {
 
       <button
         type="button"
+        disabled={isPending}
         onClick={() =>
           startTransition(() =>
             setPokemonResource(suspensify(fetchPokemon(pokemon.id + 1)))
@@ -22,6 +24,8 @@ export default function PokemonDetail() {
       >
         Next
       </button>
+
+      {isPending && <DelaySpinner />}
     </div>
   );
 }
