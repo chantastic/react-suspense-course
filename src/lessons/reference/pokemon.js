@@ -6,7 +6,7 @@ export const PokemonResource = createResource(id =>
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
 );
 
-function suspensifyPromise(thenable) {
+function suspensify(thenable) {
   let status = "pending";
   let result;
   let suspender = thenable.then(

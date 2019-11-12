@@ -6,3 +6,5 @@ everything from this point forward requires the experimental build
 - ReactDOM.render(<App />, rootElement);
 + ReactDOM.createRoot(rootElement).render(<App />);
 ```
+
+Different modes: https://reactjs.org/docs/concurrent-mode-adoption.html#feature-comparison

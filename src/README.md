@@ -6,7 +6,7 @@
 - `ErrorBoundary`
   - Customizing an Error boundary
 - Interact with Suspense and Error Boundaries — The three states (using React.lazy)
-- create a resource with `wrapPromise` / `suspensifyPromise`
+- create a resource with `wrapPromise` / `suspensify`
   - make pokemon read from resource
   - a minimal wrapPromise (in place of a framework like Relay, or Apollo)
   - build up `wrapPromise`
@@ -37,26 +37,53 @@ function PokemonSimple() {
 Gain control over asyncronous state transitions in your app. (concrete)
 Avoid common pain points in the Suspense API. (personal)
 
-## Import Components Lazily with Suspense React.lazy
-## Catch Errors with an Error Boundary Component
-## Understand How React.lazy Communicates Loading Status to Suspense and Error Boundary Components
-## Wrap Promises to Communicate Pending, Error, and Success Status to Suspense and Error Boundaries
-## Track Async Requests with React.useState
-## Enable React's Experimental Suspense Features by Enabling Concurrent Mode with ReactDOM.createRoot
-## Deprioritize Non User-Blocking Updates with React.useTransition's startTransition function
-## Bypass Receeded Views with React.useTrasition's timeoutMS option
-## Display Loading States Conditionally with React.useTransition's isPending Boolean
-## Delay the Appearance of a Loading Spinner with CSS
+## 100 Introduction to Suspense Concepts
 
-## Hoist state?
+- 101: Import a Component Lazily with React.lazy and Suspense
+- 102: Catch Errors with an Error Boundary Component
+- 103: Understand how to Communicate with Suspense and Error Boundary Components
+- 104: Wrap a Promise to Communicate Pending, Success, and Error states Suspense and Error Boundaries
+- 105: Track Fetch Requests with React.useState
+- 106: Enable Concurrent Mode with ReactDOM.createRoot to Take Advantage of React's Experimental Suspense Features
+- 107: Depriority of Non User Blocking Updates with React.useTransition's startTransition function
+- 108: Bypass Receeded Views with React.useTrasition's timeoutMS option
+- 109: Display Conditional Loading States with React.useTransition's isPending Boolean
+- 110: Delay the Appearance of a Loading Spinner with CSS
 
-## Gotcha: Always Wrap Suspendible Data in Compnonents
-## Gotcha: Always Read Suspendible Data from Components
+- 111: Refactor: Hoist Component State
+- 112: Review: \*\*Fetch a collection using
+
+##
+
+- Gotcha: Always Wrap Suspendible Data in Compnonents
+- Gotcha: Always Read Suspendible Data from Components
+
+##
+
+- useDeferredValue
+- SuspenseList
+  - revealOrder
+  - tail
+
+##
+
+- react dev tools
+  - suspense
+  - find component
+
+##
+
+- styling
+- sharing resources with context
+- making re-usable resource components
+  - pokemon
+  - pokemon-list
+- modularizing components
+- routing?
 
 How do I transition
 
-## How to make a customizeable list component
+## prereq
 
-##  with React Dev Tools
-  - prereq: install react dev tools
-##
+- install react dev tools
+- experimental channels

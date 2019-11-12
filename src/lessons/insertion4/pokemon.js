@@ -1,5 +1,5 @@
 import React from "react";
-function suspensifyPromise(thenable) {
+function suspensify(thenable) {
   let status = "pending";
   let result;
   let suspender = thenable.then(
@@ -33,7 +33,7 @@ function fetchPokemon(id) {
     res.json()
   );
 
-  return suspensifyPromise(pokemon);
+  return suspensify(pokemon);
 }
 
 let initialResource = fetchPokemon(1);

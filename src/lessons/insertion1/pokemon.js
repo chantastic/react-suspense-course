@@ -9,7 +9,7 @@ import React from "react";
 // we need a way to connect our promises to suspense and error boundaries
 // this will commonly be the domain of data fetching libraries
 // but it's important to know how it all works
-function suspensifyPromise(thenable) {
+function suspensify(thenable) {
   // // 1 let's move outside in (reverse)
   // // 1.3
   // return { name: "Fake Bulbasaur" };
@@ -111,7 +111,7 @@ function fetchPokemonData() {
   );
 
   return {
-    pokemon: suspensifyPromise(pokemon)
+    pokemon: suspensify(pokemon)
   };
 }
 

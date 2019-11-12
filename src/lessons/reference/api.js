@@ -1,9 +1,9 @@
 export function fetchPokemon(pokemonId) {
-  return suspensifyPromise(getFromPokeAPI(`/pokemon/${pokemonId}`));
+  return suspensify(getFromPokeAPI(`/pokemon/${pokemonId}`));
 }
 
 export function fetchPokemonCollection() {
-  return suspensifyPromise(getFromPokeAPI(`/pokemon/`));
+  return suspensify(getFromPokeAPI(`/pokemon/`));
 }
 
 // BELOW SNATCHED FROM: https://github.com/gaearon/suspense-experimental-github-demo/blob/master/src/api.js
@@ -16,7 +16,7 @@ async function getFromPokeAPI(url) {
   return response.json();
 }
 
-function suspensifyPromise(promise) {
+function suspensify(promise) {
   let status = "pending";
   let result;
   let suspender = promise.then(
