@@ -6,7 +6,7 @@ let initialPokemon = suspensify(fetchPokemon(1));
 
 export default function PokemonDetail() {
   let [pokemonResource, setPokemonResource] = React.useState(initialPokemon);
-  let [startTransition, isPending] = React.useTransition({ timeoutMs: 1000 });
+  let [startTransition, isPending] = React.useTransition({ timeoutMs: 3000 });
   let pokemon = pokemonResource.read();
 
   return (

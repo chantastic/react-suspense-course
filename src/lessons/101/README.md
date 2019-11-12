@@ -47,3 +47,15 @@ The Three "R"s of #ReactJS Suspense
 - wrap promises
 - read() from components
 - wrap read()-ing components in <Suspense />
+
+---
+
+## Old Notes
+
+Lazy load a Component with React.Lazy and React.Suspense
+
+## CHALLENGE: React.Lazy Pokemon
+
+- Import `Pokemon` component lazily (as-needed) — using `React.lazy`
+- Wrap `Pokemon` component in `React.Suspense`
+- Provide `"Locating pokemon..."` as a `fallback`
