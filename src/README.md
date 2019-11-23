@@ -88,3 +88,20 @@ How do I transition
 
 - install react dev tools
 - experimental channels
+
+## after 112
+
+- hoist-state (move everything up to the app level, pre-req for suspense-list and useDeferredValue)
+- useDeferredValue as alternative
+- Suspense gotchas for list
+- SuspenseList et al
+  - change limit and
+  - useDeferredValue
+- Switch Views (useState)
+- Build out List
+
+  - add params to resource
+  - re-useable reader
+  - useDeferred for showing more
+
+- show pokemon preview then "more details" links to pokemon detail

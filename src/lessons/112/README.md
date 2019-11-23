@@ -1,8 +1,14 @@
 # Exercise
 
-## Fine-tuning interactions
+## hoist state
 
-... and now that i have these intermediate states in place, i'm willing to wait a little longer before seeing the receeded state.
-let's bump it up to somethig like 3 seconds
+## Motions
 
-let's also add a spinner on the next page to make that look live as well
+start from the outermost and move up because VSCode will show us what we aren't using
+
+- move the next out
+- move state and useTransition to App() component
+- move initialPokemon App Module
+- move imports
+- pass as props to component
+- update button to call use pokemonResource.read()
