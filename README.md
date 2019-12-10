@@ -12,7 +12,7 @@ If you have questions, hit me up on twitter — [@chantastic](https://twitter.co
 What we'll cover here is not "stable" React API.  
 It will likely change.
 In fact, many features that I used to teach have been removed and no replacement has been set.
-I suspect that things will stabelize by React Conf 2019 on October 24th.
+I suspect that things will stabilize by React Conf 2019 on October 24th.
 
 ## Who is this for?
 
@@ -20,7 +20,7 @@ This is an advanced course in React.
 I assume that you've built applications in React.
 
 You could absolutely follow this tutorial with no React experience.  
-However, the patterns I'll demonstrate here won't feel necessary unless you've worked in a compelex codebase.
+However, the patterns I'll demonstrate here won't feel necessary unless you've worked in a complex codebase.
 
 The goal of this course isn't to teach React from scratch  
 But demonstrate how thinking in Suspense will change your components and organizational structures.
