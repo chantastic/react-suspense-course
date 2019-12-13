@@ -1,4 +1,6 @@
-# Exercise
+# De-prioritize Non User-Blocking Updates with useTransition's startTransition function
+
+## Exercise
 
 ## title: reduce the priority of async state changes with useTransition
 

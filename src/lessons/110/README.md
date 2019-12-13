@@ -1,4 +1,6 @@
-# Exercise
+# Display Loading States Conditionally with React.useTransition's isPending Boolean
+
+## Exercise
 
 useTransition provides a second argument.
 by convention, assigned as isPending.

@@ -1,4 +1,6 @@
-# Exercise
+# Catch Errors with an Error Boundary Component
+
+## Exercise
 
 **DRAFT**
 

@@ -1,4 +1,6 @@
-# Exercise
+# Coordinate Fallback rendering with the SuspenseList Component
+
+## Exercise
 
 SuspenseList
 

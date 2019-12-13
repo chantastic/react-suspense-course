@@ -1,4 +1,6 @@
-# Exercise
+# Wrap Fetch Requests to Communicate Pending, Error and Success Status to Suspense
+
+## Exercise
 
 Anything promise can connect to suspense.
 You just need to make a wrapper.

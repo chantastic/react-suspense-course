@@ -1,4 +1,6 @@
-# Exercise
+# Bypass Receded Views with useTransition's timeoutMs option
+
+## Exercise
 
 We have this component,
 We're using useTransition to deprioritize prevent our suspensified state update block user updates

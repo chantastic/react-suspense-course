@@ -1,6 +1,6 @@
-# Exercise
+# Import Components Lazily with Suspense React.lazy
 
-## Import a Component Dynamically with Suspense and React.lazy
+## Exercise
 
 Code-split Component code and load asynchronously
 

@@ -1,6 +1,6 @@
-# Exercise
+# Hoist Component State
 
-## hoist state
+## Exercise
 
 ## Motions
 

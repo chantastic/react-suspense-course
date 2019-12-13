@@ -1,4 +1,6 @@
-# Exercise
+# Track Async Requests with React's useState Hook
+
+## Exercise
 
 - make fetching function dynamic
 - put in api.js file

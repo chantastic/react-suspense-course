@@ -1,4 +1,6 @@
-# Exercise
+# Delay the Appearance of a Loading Spinner with CSS
+
+## Exercise
 
 We have here a component that show ...
 And it shows a DelaySpinner that is really helpful with slow internet speeds.

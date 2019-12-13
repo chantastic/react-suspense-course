@@ -1,4 +1,6 @@
-# Exercise
+# Understand How React.lazy Communicates Loading Status to Suspense and Error Boundaries
+
+## Exercise
 
 **DRAFT**
 

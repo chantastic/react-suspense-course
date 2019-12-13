@@ -1,4 +1,6 @@
-# Exercise
+# Avoid this Common Suspense Gotcha by Reading Data From Components
+
+## Exercise
 
 Suspense Gotcha: read() has to be called inside a component
 

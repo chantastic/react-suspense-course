@@ -1,4 +1,6 @@
-# Exercise
+# Separate API Utility Functions from Components
+
+## Exercise
 
 Now that we have real data, let's add a next button to this component.
 

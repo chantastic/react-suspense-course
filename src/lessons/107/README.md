@@ -1,4 +1,6 @@
-# Exercise 106
+# Enable Suspense Features with Experimental Concurrent Mode using ReactDOM.createRoot
+
+## Exercise
 
 everything from this point forward requires the experimental build
 

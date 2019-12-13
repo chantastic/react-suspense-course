@@ -1,4 +1,4 @@
-# Exercise
+# Reveal Suspense Components in Order with SuspenseList's revealOrder Prop
 
 revealOrder
 
