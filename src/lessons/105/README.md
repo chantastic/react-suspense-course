@@ -1,5 +1,10 @@
 # Track Async Requests with React's useState Hook
 
+The `useState` Hook is the best way to track state in React.  
+It's capabilities aren't limited to known values either.  
+State can be set with asynchronously resolved values as well — like the result of a fetch request.
+Wrapped promises can be given to `useState` to communicate promise status for state transitions.
+
 ## Exercise
 
 - make fetching function dynamic

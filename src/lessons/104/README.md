@@ -1,5 +1,10 @@
 # Wrap Fetch Requests to Communicate Pending, Error and Success Status to Suspense
 
+We can write our own promises wrappers to communicate pending, error, and success statuses to `Suspense` and error boundaries components.
+
+The wrapper we write in this lesson is the minimum viable wrapper required for data fetching.  
+Knowing how to wrap promises for communication with `Suspense` and error boundaries allows you to suspend any asynchronous data.
+
 ## Exercise
 
 Anything promise can connect to suspense.

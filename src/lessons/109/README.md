@@ -1,5 +1,12 @@
 # Bypass Receded Views with useTransition's timeoutMs option
 
+Suspense components know one thing — how to show a fallback when promises are pending.
+As new data is requested in these Suspense boundaries, the previous data will be replaced with the fallback.
+
+This is re-presentation of the fallback state is known as the "receded state".
+
+We can configure `useTransition` to present the the previous rendering of the component for a specified duration with the `timeoutMs' option.
+
 ## Exercise
 
 We have this component,

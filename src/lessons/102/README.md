@@ -1,5 +1,12 @@
 # Catch Errors with an Error Boundary Component
 
+JavaScript's try/catch feature allows you to isolate errors and prevent them from halting execution in adjacent parts of an app.
+
+Error boundaries do the same for component trees.  
+They allow you to isolate errors and send them to an error reporting service.
+
+Let's learn they are used to catch errors thrown by promises.
+
 ## Exercise
 
 **DRAFT**

@@ -1,5 +1,14 @@
 # De-prioritize Non User-Blocking Updates with useTransition's startTransition function
 
+In blocking rendering, all updates have the same priority.
+
+In Concurrent Mode, work is "interruptible".  
+User-blocking updates are treated with the highest importance.
+
+To keep interfaces interactive and snappy, we can de-prioritize slower updates.
+
+The `useTransition` Hook allows React to schedule work after higher priority work.
+
 ## Exercise
 
 ## title: reduce the priority of async state changes with useTransition

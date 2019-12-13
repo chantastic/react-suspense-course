@@ -1,5 +1,11 @@
 # Display Loading States Conditionally with React.useTransition's isPending Boolean
 
+It's a good practice to give users immediate feedback while asynchronous work is being completed.
+
+`useTransition` returns a boolean we can use to conditionally render loading UI.  
+This boolean lives the second element in the array returned by `useTransitions`.  
+By convention, it's assigned to a variable named `isPending`.
+
 ## Exercise
 
 useTransition provides a second argument.

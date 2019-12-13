@@ -1,5 +1,10 @@
 # Understand How React.lazy Communicates Loading Status to Suspense and Error Boundaries
 
+Suspense won't magically detect and inspect promises in your code.  
+You have to wrap promises to communicate promise status to Suspense and error boundaries.
+
+`React.lazy` acts as a model for which states we need our promise wrappers to handle.
+
 ## Exercise
 
 **DRAFT**

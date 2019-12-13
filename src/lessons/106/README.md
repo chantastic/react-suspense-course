@@ -1,5 +1,8 @@
 # Separate API Utility Functions from Components
 
+Separating concerns can improve code re-use.  
+Keeping API functions separate from components can be a nice way to isolate concerns with the data layer and make data fetching functions available to other modules.
+
 ## Exercise
 
 Now that we have real data, let's add a next button to this component.

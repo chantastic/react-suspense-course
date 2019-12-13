@@ -1,5 +1,10 @@
 # Import Components Lazily with Suspense React.lazy
 
+The `Suspense` component isn't new.  
+We've been able to use it since 2018.
+
+Learn the simplest way to start using Suspense in any React codebase (v16.6 or later), using dynamic imports.
+
 ## Exercise
 
 Code-split Component code and load asynchronously

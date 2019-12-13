@@ -1,5 +1,13 @@
 # Get Previous Resource Values with React’s useDeferredState Hook
 
+The `useDeferredValue` Hook gives us a way to hold onto a previous resource values while waiting for a new one.
+
+This is a more hands-on alternative to the magic of `useTransition`.  
+With `useTransition`, React "keeps" the previous rendering and gives you a magical `isPending` boolean to conditionally show loading UI.
+
+`useDeferredValue` puts you in the driver seat by giving you the actual value.  
+This value can be used to implement our own `isPending`.
+
 ## Exercise
 
 ## useDeferredValue

@@ -1,5 +1,10 @@
 # Avoid Too Many Spinners with SuspenseList’s tail Prop
 
-SuspenseList tail
+`tail` is an optional prop for `SuspenseList`.  
+It works in tandem with `revealOrder` and has three options: `undefined`, `collapsed`, and `hidden`.
 
-hidden
+These options can be used to configure how fallbacks are displayed.
+
+* `undefined`: show all `fallbacks`
+* `hidden`: show no `fallbacks`
+* `collapsed`: show only the next `fallback`

@@ -1,9 +1,8 @@
 # Reveal Suspense Components in Order with SuspenseList's revealOrder Prop
 
-revealOrder
+`revealOrder` is one of `SuspenseList`s configuration options. It can be undefined, `together`, `forwards`, and `backwards`.
 
-- "together" — wait for the longest request
-- "forwards" — first down
-- "backwards" — backwards up
-
-we'll change our latency to prove that
+* `undefined` (default): reveal children as suspenders resolve
+* `together`: reveal children together, once all suspenders are resolved
+* `forwards`: render children from top to bottom, indifferent to suspender resolution order
+* `backwards`: render children from bottom to top, indifferent to suspender resolution order

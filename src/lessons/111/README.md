@@ -1,5 +1,12 @@
 # Delay the Appearance of a Loading Spinner with CSS
 
+Eager delay spinners are not a good user experience.  
+They can make a snappy user interface feel slower.
+
+We want delay spinners to appear only after a perceivable delay.  
+`useTransition` doesn't yet have an API for customizing this.  
+Until it does, we can use CSS animations to delay visibility of delay spinners.
+
 ## Exercise
 
 We have here a component that show ...
