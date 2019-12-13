@@ -46,7 +46,7 @@ export default function PokemonDetail() {
       <section className="detail-header">
         <img
           src={pokemon.sprites.front_default}
-          alt={`${pokemon.name} image`}
+          alt={pokemon.name}
           width="200"
         />
 

@@ -2,7 +2,6 @@ import React from "react";
 import ErrorBoundary from "./error-boundary";
 import {
   fetchPokemon,
-  fetchPokemonCollectionUrl,
   fetchPokemonCollection,
   suspensify
 } from "./api";
@@ -88,7 +87,7 @@ export default function App() {
                         >
                           <img
                             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
-                            alt={`${pokemon.name} image`}
+                            alt={pokemon.name}
                             width="50"
                           />
                           <h3>{pokemon.name}</h3>
