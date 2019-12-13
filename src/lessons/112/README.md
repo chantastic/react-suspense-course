@@ -36,3 +36,7 @@ Now that we have better boundaries, I'm going to do just a little bit of mainten
 These names are getting nuts
 `pokemonResource` => `pokemon`
 `...PokemonResource` => `Pokemon`
+
+## Solution
+
+[Lesson 113](../113) is holds the solution to this lesson.

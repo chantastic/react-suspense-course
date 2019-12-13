@@ -37,3 +37,7 @@ let's bump it up to somethig like 3 seconds
 let's also add a spinner on the next page to make that look live as well
 
 move into UI
+
+## Solution
+
+[Lesson 112](../112) is holds the solution to this lesson.

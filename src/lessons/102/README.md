@@ -79,3 +79,7 @@ To use Suspense effectively, you have to to make use of error boundaries.
 - Create a Resource using `fetch`ed data
 - `read()` from Resource
 - Discuss "react-cache"s unstable state
+
+## Solution
+
+[Lesson 103](../103) is holds the solution to this lesson.

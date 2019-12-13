@@ -34,3 +34,7 @@ Now, when we click next, the previous state sticks around.
 
 If we slow things down, we see that the transition will happen (ready or not) after the specified wait time.
 But an fast speeds, we won't see the receeded state.
+
+## Solution
+
+[Lesson 110](../110) is holds the solution to this lesson.

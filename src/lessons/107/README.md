@@ -16,3 +16,7 @@ everything from this point forward requires the experimental build
 ```
 
 Different modes: https://reactjs.org/docs/concurrent-mode-adoption.html#feature-comparison
+
+## Solution
+
+[Lesson 108](../108) is holds the solution to this lesson.

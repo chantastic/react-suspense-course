@@ -17,3 +17,7 @@ Let's call this `initialPokemon`
 Now we hookup an onClick
 Which — when clicked — will set our Pokemon
 Here we'll just give it a suspensified function to fetch the next pokemon
+
+## Solution
+
+[Lesson 107](../107) is holds the solution to this lesson.

@@ -30,3 +30,7 @@ Wrapping our setPokemonResource call in startTransition,
 we communicate to React that this update is lower prior.
 
 Also, it just makes the error go away :)
+
+## Solution
+
+[Lesson 109](../109) is holds the solution to this lesson.

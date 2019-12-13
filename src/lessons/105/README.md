@@ -24,3 +24,7 @@ Create Resource with id
   - Pass it to `read()`
   - Take id as an argument and use a template literal string to change to fetch pokemon
 - Now, we've stolen a DOM attribute. Talk about that.
+
+## Solution
+
+[Lesson 106](../106) is holds the solution to this lesson.

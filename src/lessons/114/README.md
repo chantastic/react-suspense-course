@@ -24,3 +24,7 @@ Let's cover a couple Suspense gotchas by adding a list of available pokemon
   - let's move it into a component and it'll work
 - while we're in here, let's show a list of buttons (don't forget the key. just use the name. we know it's distinct in this case)
 - and let's make a distinct endpoint because we'll want to configure this in just a little bit
+
+## Solution
+
+[Lesson 115](../115) is holds the solution to this lesson.

@@ -5,6 +5,10 @@ It works in tandem with `revealOrder` and has three options: `undefined`, `colla
 
 These options can be used to configure how fallbacks are displayed.
 
-* `undefined`: show all `fallbacks`
-* `hidden`: show no `fallbacks`
-* `collapsed`: show only the next `fallback`
+- `undefined`: show all `fallbacks`
+- `hidden`: show no `fallbacks`
+- `collapsed`: show only the next `fallback`
+
+## Solution
+
+[Lesson 201](../201) is holds the solution to this lesson.

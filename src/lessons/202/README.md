@@ -6,3 +6,7 @@ The Pokeapi doesn't have an id property on Pokemon but we can transform our resp
 With a little destructuring assignment and object spread we can augment our API with helpful properties.
 
 ## Exercise
+
+## Solution
+
+[Lesson 203](../203) is holds the solution to this lesson.

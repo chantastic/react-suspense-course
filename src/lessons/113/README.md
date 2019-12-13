@@ -18,3 +18,7 @@ start from the outermost and move up because VSCode will show us what we aren't 
 - move imports
 - pass as props to component
 - update button to call use pokemonResource.read()
+
+## Solution
+
+[Lesson 114](../114) is holds the solution to this lesson.

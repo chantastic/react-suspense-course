@@ -105,3 +105,7 @@ How does it talk with Suspense?
 //   })
 // );
 ```
+
+## Solution
+
+[Lesson 105](../105) is holds the solution to this lesson.

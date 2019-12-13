@@ -17,3 +17,7 @@ Now that we have a couple suspense compopnents, wouldn't it be nice to coordinat
 - let's slow down our promises to see this thing in action
 - let's update our messages, fallbacks can be components
 - the come in together now. let's see the default now that we're delaying the responses
+
+## Solution
+
+[Lesson 116](../116) is holds the solution to this lesson.

@@ -64,3 +64,7 @@ Wrap it all up in an ErrorBoundary.
 // show off what it does
 // customize ErrorBoundary with fallback, for parity with suspense
 // use defaultProps to do i
+
+## Solution
+
+[Lesson 104](../104) is holds the solution to this lesson.

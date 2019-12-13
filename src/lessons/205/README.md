@@ -7,3 +7,7 @@ But Context can!
 Let's explore how Context Providers, Consumers, and the `useContext` Hook can integrate with Suspense to mask wordy `useTransition`-wrapped API calls.
 
 ## Exercise
+
+## Solution
+
+[Lesson 206](../206) is holds the solution to this lesson.
