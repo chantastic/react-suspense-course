@@ -1,24 +1,34 @@
 # Understand How React.lazy Communicates Loading Status to Suspense and Error Boundaries
 
 Suspense won't magically detect and inspect promises in your code.  
-You have to wrap promises to communicate promise status to Suspense and error boundaries.
+You have to wrap promises to communicate status to Suspense and error boundaries.
 
 `React.lazy` acts as a model for which states we need our promise wrappers to handle.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-understand-how-react-lazy-communicates-loading-status-to-suspense-and-error-boundaries?af=1x80ad)
+
 ## Exercise
 
-**DRAFT**
+With our Suspense and ErrorBoundary fallbacks in place,
+let's break our component import and force the three possible states that we're now setup to handle.
 
-Now that we have the Suspense and Error Boundaries mapped out,
-I want to take just a second to introduce you to the three states we're setup to handle.
+### 1: Error
 
-### Error
+If the module fails to load for some reason, it will be picked up by our `<ErrorBoundary fallback="..">`
+
+Give it a try with:
 
 ```js
 const PokemonDetail = React.lazy(() => Promise.reject());
 ```
 
-### Pending
+### 2. Pending
+
+While our module awaits the network, it will be picked up by our `<Suspense fallback="..">`
+
+Give it a try with:
 
 ```js
 const PokemonDetail = React.lazy(
@@ -26,14 +36,27 @@ const PokemonDetail = React.lazy(
 );
 ```
 
-### Resolved
+### 3. Success
 
+When our module successfully loads (after a short delay), the component will be rendered.
+
+Give it a try with:
+
+```js
 const PokemonDetail = React.lazy(
-() =>
-new Promise(resolve =>
-setTimeout(() => resolve({ default: () => <div>Fake Pokemon</div> }), 2000)
-)
+  () =>
+    new Promise(resolve =>
+      setTimeout(
+        () => resolve({ default: () => <div>Fake Pokemon</div> }),
+        2000
+      )
+    )
 );
+```
+
+...or, just put it back to fix the import :)
+
+`const PokemonDetail = React.lazy(() => import("./pokemon-detail"))`
 
 ## Put everything back
 
@@ -41,30 +64,6 @@ And that's what happens when we is dynamic import to load components
 
 ---
 
-# Old notes
-
-Break it.
-Wrap it all up in an ErrorBoundary.
-
-## CHALLENGE
-
-- Break the fetch request by pointing it to a non-existent URL
-- Follow the link in the resulting error to React's docs on the `ErrorBoundary` component
-- Copy/paste the `ErrorBoundary` component into your app — taking care to replace error logging with local logging like `console.log`
-- Allow use of a `fallback` prop like `React.Suspense`
-
----
-
-// CHALLENGE:
-
-// break the api call
-// read the resulting error
-// copy the error boundary
-// change logging to console.log
-// show off what it does
-// customize ErrorBoundary with fallback, for parity with suspense
-// use defaultProps to do i
-
 ## Solution
 
-[Lesson 104](../104) is holds the solution to this lesson.
+Lesson [104](../104) holds the solution to this lesson.

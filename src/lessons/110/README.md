@@ -6,6 +6,10 @@ It's a good practice to give users immediate feedback while asynchronous work is
 This boolean lives the second element in the array returned by `useTransitions`.  
 By convention, it's assigned to a variable named `isPending`.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-display-loading-states-conditionally-with-react-usetransition-s-ispending-boolean?af=1x80ad)
+
 ## Exercise
 
 useTransition provides a second argument.
@@ -21,4 +25,4 @@ Because this is quick and dirty, we can use a style tag to keep all this right i
 
 ## Solution
 
-[Lesson 111](../111) is holds the solution to this lesson.
+Lesson [111](../111) holds the solution to this lesson.

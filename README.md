@@ -14,6 +14,14 @@ In this workshop we talk project setup, finding help, and what to expect from th
 This course is narrowly focused on Concurrent Mode and Suspense.  
 We will not cover adjacent topics like styling or code organization.
 
+## On Egghead
+
+This course is available to egghead.io members or as a standalone course for \$99.
+
+[Buy the course or membership here](https://egghead.io/courses/build-an-app-with-react-suspense?af=1x80ad)
+
+## Contact
+
 If you have questions, hit me up on twitter — [@chantastic](https://twitter.com/chantastic) — or via email (in my [Github bio](https://github.com/chantastic/)).
 
 ## WARNING!!!

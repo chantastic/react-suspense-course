@@ -6,19 +6,10 @@ State in one component may need to be lifted up to a parent component for coordi
 This can be an error-prone refactoring.  
 With a good editor, it's best to start with the returned JSX and move out.
 
-## Exercise
+## Video
 
-## Motions
-
-start from the outermost and move up because VSCode will show us what we aren't using
-
-- move the next out
-- move state and useTransition to App() component
-- move initialPokemon App Module
-- move imports
-- pass as props to component
-- update button to call use pokemonResource.read()
+[On egghead.io](https://egghead.io/lessons/react-hoist-component-state?af=1x80ad)
 
 ## Solution
 
-[Lesson 114](../114) is holds the solution to this lesson.
+Lesson [114](../114) holds the solution to this lesson.

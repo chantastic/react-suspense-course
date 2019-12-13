@@ -8,6 +8,10 @@ With `useTransition`, React "keeps" the previous rendering and gives you a magic
 `useDeferredValue` puts you in the driver seat by giving you the actual value.  
 This value can be used to implement our own `isPending`.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-get-previous-resource-values-with-react-s-usedeferredstate-hook?af=1x80ad)
+
 ## Exercise
 
 ## useDeferredValue
@@ -39,4 +43,4 @@ These names are getting nuts
 
 ## Solution
 
-[Lesson 113](../113) is holds the solution to this lesson.
+Lesson [113](../113) holds the solution to this lesson.

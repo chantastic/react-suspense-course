@@ -6,44 +6,10 @@ Resource reads can't happen in the same component as the `Suspense` and error bo
 
 When you have your Suspense and error boundary components in place but still get errors about them absence, you probably need to move a `read()` call into a component.
 
-## Exercise
+## Video
 
-Suspense Gotcha: read() has to be called inside a component
-
-Let's cover a couple Suspense gotchas by adding a list of available pokemon
-
-## Motions
-
-- fetch using `fetchPokemon("")`, for now, just passing empty string will get the collection. we'll make a unique endpoint later
-- try to read() collection resource (`count` is part of the response metadata)
-- We see some familiar errors. Let's get an error boundary in here stat
-  - that didn't do anything.
-  - let's get the suspense component in there
-    - that didn't help either. what the heck
-- The problem is that we need a component boundary to read from a resource
-  - let's move it into a component and it'll work
-- while we're in here, let's show a list of buttons (don't forget the key. just use the name. we know it's distinct in this case)
-- and let's make a distinct endpoint because we'll want to configure this in just a little bit
+[On egghead.io](https://egghead.io/lessons/react-avoid-this-common-suspense-gotcha-by-reading-data-from-components?af=1x80ad)
 
 ## Solution
 
-[Lesson 115](../115) is holds the solution to this lesson.
-
-## Other Notes
-
-## Challenge
-
-(in src/index.js)
-
-- `read()` from a pokemon collection cache outside of a `Suspense` component
-  - import `unstable_createResource` from "react-cache"
-  - `fetch` a list of Pokemon from `https://pokeapi.co/api/v2/pokemon/`
-  - render a list of those pokemon from `results`
-- Notice Suspense Error
-  - wrap it in Suspense
-  - add fallback="Gotta catch 'em all..."
-- Notice that the error persists
-  - move `<ul>` into component named <PokemonList />
-- break the endpoint
-  - notice that it errors outside of an ErrorBoundary
-  - we could use a different ErrorBoundary or move it in. let's move it in for now
+Lesson [115](../115) holds the solution to this lesson.

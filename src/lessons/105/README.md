@@ -5,6 +5,10 @@ It's capabilities aren't limited to known values either.
 State can be set with asynchronously resolved values as well — like the result of a fetch request.
 Wrapped promises can be given to `useState` to communicate promise status for state transitions.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-track-async-requests-with-react-s-usestate-hook?af=1x80ad)
+
 ## Exercise
 
 - make fetching function dynamic
@@ -27,4 +31,4 @@ Create Resource with id
 
 ## Solution
 
-[Lesson 106](../106) is holds the solution to this lesson.
+Lesson [106](../106) holds the solution to this lesson.

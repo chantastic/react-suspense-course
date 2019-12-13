@@ -9,6 +9,10 @@ These options can be used to configure how fallbacks are displayed.
 - `hidden`: show no `fallbacks`
 - `collapsed`: show only the next `fallback`
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-avoid-too-many-spinners-with-suspenselist-s-tail-prop?af=1x80ad)
+
 ## Solution
 
-[Lesson 201](../201) is holds the solution to this lesson.
+Lesson [201](../201) holds the solution to this lesson.

@@ -27,6 +27,10 @@ Show online, fast, and slow
 Now that this is fleshed out.
 Let's move it into a new module for shared ui.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-delay-the-appearance-of-a-loading-spinner-with-css?af=1x80ad)
+
 # Exercise
 
 ## Fine-tuning interactions
@@ -40,4 +44,4 @@ move into UI
 
 ## Solution
 
-[Lesson 112](../112) is holds the solution to this lesson.
+Lesson [112](../112) holds the solution to this lesson.

@@ -6,8 +6,10 @@ But Context can!
 
 Let's explore how Context Providers, Consumers, and the `useContext` Hook can integrate with Suspense to mask wordy `useTransition`-wrapped API calls.
 
-## Exercise
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-provide-suspensified-data-to-components-with-context-providers-consumers-and-usecontext?af=1x80ad)
 
 ## Solution
 
-[Lesson 206](../206) is holds the solution to this lesson.
+Lesson ["complete"](../complete) holds the solution to this lesson.

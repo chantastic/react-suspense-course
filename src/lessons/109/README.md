@@ -7,6 +7,10 @@ This is re-presentation of the fallback state is known as the "receded state".
 
 We can configure `useTransition` to present the the previous rendering of the component for a specified duration with the `timeoutMs' option.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-bypass-receded-views-with-usetransition-s-timeoutms-option?af=1x80ad)
+
 ## Exercise
 
 We have this component,
@@ -37,4 +41,4 @@ But an fast speeds, we won't see the receeded state.
 
 ## Solution
 
-[Lesson 110](../110) is holds the solution to this lesson.
+Lesson [110](../110) holds the solution to this lesson.

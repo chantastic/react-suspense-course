@@ -3,6 +3,10 @@
 Separating concerns can improve code re-use.  
 Keeping API functions separate from components can be a nice way to isolate concerns with the data layer and make data fetching functions available to other modules.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-separate-api-utility-functions-from-components?af=1x80ad)
+
 ## Exercise
 
 Now that we have real data, let's add a next button to this component.
@@ -20,4 +24,4 @@ Here we'll just give it a suspensified function to fetch the next pokemon
 
 ## Solution
 
-[Lesson 107](../107) is holds the solution to this lesson.
+Lesson [107](../107) holds the solution to this lesson.

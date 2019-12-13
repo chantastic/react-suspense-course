@@ -9,28 +9,10 @@ To keep interfaces interactive and snappy, we can de-prioritize slower updates.
 
 The `useTransition` Hook allows React to schedule work after higher priority work.
 
-## Exercise
+## Video
 
-## title: reduce the priority of async state changes with useTransition
-
-As we click this button — in concurrent mode — requesting the next pokemon, we get this funny new error
-
-```
-Warning: PokemonDetail triggered a user-blocking update that suspended.
-
-The fix is to split the update into multiple parts: a user-blocking update to provide immediate feedback, and another update that triggers the bulk of the changes.
-
-Refer to the documentation for useTransition to learn how to implement this pattern.
-```
-
-The first thing we get from useTransition is a function.
-This function is used to wrap suspendible state updates.
-
-Wrapping our setPokemonResource call in startTransition,
-we communicate to React that this update is lower prior.
-
-Also, it just makes the error go away :)
+[On egghead.io](https://egghead.io/lessons/react-de-prioritize-non-user-blocking-updates-with-usetransition-s-starttransition-function?af=1x80ad)
 
 ## Solution
 
-[Lesson 109](../109) is holds the solution to this lesson.
+Lesson [109](../109) holds the solution to this lesson.

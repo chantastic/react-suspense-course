@@ -7,79 +7,101 @@ They allow you to isolate errors and send them to an error reporting service.
 
 Let's learn they are used to catch errors thrown by promises.
 
+## Video
+
+[On egghead.io](https://egghead.io/lessons/react-catch-errors-with-an-error-boundary-component?af=1x80ad)
+
 ## Exercise
 
-**DRAFT**
+### 1. Temporarily create an import error
 
-Not all promises resolve.
-Some get rejected.
+```diff
+// app.js
 
-Let's force our lazy loaded component to reject, just to see what happens.
-
-```js
 - const PokemonDetail = React.lazy(() => Promise.reject());
 + const PokemonDetail = React.lazy(() => import("./pokemon-detail"));
 ```
 
-Now everything blows up and we see an error in the console.
+### 2. Read the React's console error
 
-As always, React errors are incredibly helpful.
-This one links us to a place where doc that will help us implement an error boundary.
+React's errors are great.  
+They'll tell you to go here to read more on setting up an `ErrorBoundary` component.
 
-Click it.
+### 3. Copy/Paste React's ceneric ErrorBoundary into the app
 
-Error Boundaries are are an incredibly powerful feature in React
+```diff
+// app.js
 
-They allow you to catch and log errors to error tracking services.
++ class ErrorBoundary extends React.Component {
++   constructor(props) {
++     super(props);
++     this.state = { hasError: false };
++   }
++
++   static getDerivedStateFromError(error) {
++     return { hasError: true };
++   }
++
++   componentDidCatch(error, errorInfo) {
++     logErrorToMyService(error, errorInfo);
++   }
++
++   render() {
++     if (this.state.hasError) {
++       return <h1>Something went wrong.</h1>;
++     }
++
++     return this.props.children;
++   }
++ }
+```
 
-But they play an additional role in Suspense applications.  
-Like Suspense's fallback prop, we can use these Errors to catch errors in suspended UI and show an error fallback.
+### 4. Connect or remove `logErrorToMyService` call
 
-Let's copy and paste this into our
+For the purpose of this course, log errors directly to the console.
 
-!!! MAYBE STATE THIS AS PART OF THE INITIAL PROBLEM:
-Now we get a proper error that we can send to our error reporting service, and show an error in the meantime.
-And because that error is caught by a boundary, that component can fail without it effecting other parts of the app.
-So if we add a title for our app, we'll see that this stays.
+```diff
+componentDidCatch(error, errorInfo) {
+-  logErrorToMyService(error, errorInfo);
++  console.error(error, errorInfo);
+}
+```
 
-...
+### 5. Add a `fallback=` prop like the one Suspense has
 
-- customize it by changing to logging
-- customize to take `fallback` prop for Suspense Parity
+```diff
++  static defaultProps = {
++    fallback: <h1>Something went wrong.</h1>
++  };
 
-...
-you really only need one of these.
-so let's put it into a file for re-use elsewhere
+   render() {
+     if (this.state.hasError) {
+-      return <h1>Something went wrong.</h1>;
++      return this.props.fallback;
+     }
 
-- import React
-- export component
-- import it to app
+     return this.props.children;
+   }
+```
 
----
+### 6. Wrap your Suspense Component in the new ErrorBoundary component to catch and isolate import errors
 
-# Old Notes
+```diff
++     <ErrorBoundary fallback={<div>Couldn't catch 'em all.</div>}>
+        <React.Suspense fallback={"Catching your Pokemon..."}>
+          <PokemonDetail />
+        </React.Suspense>
++     </ErrorBoundary>
+```
 
-Wrap in Error Boundary
+## Summary
 
-## CHALLENGE
+You've just added an `ErrorBoundary` component.
 
-Not every promise resolves.
-Some are rejected.
+You'll find that you only really need one of these in an application.
 
-So, when we use React.Suspense to show loading and loaded states,
-We need to consider exceptions as well.
-
-Error Boundary Crash Course
-Error boundaries were a flagship features of React 16 —
-One of the first features to illustrate the potential of the fiber rewrite.
-
-To use Suspense effectively, you have to to make use of error boundaries.
-
-- Import `unstable_createResource`
-- Create a Resource using `fetch`ed data
-- `read()` from Resource
-- Discuss "react-cache"s unstable state
+So as an extra credit, move this component into a file of its own.
 
 ## Solution
 
-[Lesson 103](../103) is holds the solution to this lesson.
+Lesson [103](../103) holds the solution to this lesson.
