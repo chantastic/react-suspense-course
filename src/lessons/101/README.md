@@ -64,3 +64,7 @@ Lazy load a Component with React.Lazy and React.Suspense
 - Import `Pokemon` component lazily (as-needed) — using `React.lazy`
 - Wrap `Pokemon` component in `React.Suspense`
 - Provide `"Locating pokemon..."` as a `fallback`
+
+## Solution
+
+[Lesson 102](../102) is holds the solution to this lesson.
