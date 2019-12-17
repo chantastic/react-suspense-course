@@ -17,14 +17,14 @@ This value can be used to implement our own `isPending`.
 ### 1. Define `deferredPokemonResource` using `React.useDeferredValue(PokemonResource)
 
 ```diff
-// app.js
+// pokemon-detail.js
 + let deferredPokemon = React.useDeferredValue(PokemonResource);
 ```
 
 ### 2. Provide the `timeoutMs` option to `React.useDeferredValue` as the second argument
 
 ```diff
-// app.js
+// pokemon-detail.js
 - let deferredPokemon = React.useDeferredValue(PokemonResource);
 + let deferredPokemon = React.useDeferredValue(PokemonResource, { timeoutMs: 3000 });
 ```
@@ -32,7 +32,7 @@ This value can be used to implement our own `isPending`.
 ### 3. Remove `isPending` from `React.useTransition`
 
 ```diff
-// app.js
+// pokemon-detail.js
 - let [startTransition, isPending] = React.useTransition();
 + let [startTransition] = React.useTransition();
 ```
