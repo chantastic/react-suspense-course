@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // ↓↓↓ 👋 Update this line to change the lesson ↓↓↓
-let lesson = "112";
+let lesson = "complete";
 
 const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
 function App() {
