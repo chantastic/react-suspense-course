@@ -29,13 +29,14 @@ import React from "react";
 //   };
 // }
 
-// 2. Wrap this fetch request in `suspensify`
+// 2. Fetch a pokemon from PokeAPI
+// 3. Wrap this fetch request in the `suspensify` function
 let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res =>
   res.json()
 );
 
 export default function PokemonDetail() {
-  // 3. `pokemon` is now a resource with a `read()` function on it
+  // 4. `pokemon` is now a resource with a `read()` function on it
   //    use `{pokemon.read().name}` to display the name of the first Pokemon fetched from the internet
   return <div>Static Pokemon</div>;
 }

@@ -11,23 +11,49 @@ Wrapped promises can be given to `useState` to communicate promise status for st
 
 ## Exercise
 
-- make fetching function dynamic
-- put in api.js file
+### 1. Use React.useState to track the current Pokemon resource
 
----
+```diff
+// pokemon-detail.js #PokemonDetail
++ let [pokemonResource, setPokemonResource] = React.useState();
+```
 
-# Old Notes
+### 2. Rename `pokemon` to `initialPokemon` to indicate that it's only the initial Pokemon
 
-Create Resource with id
+```diff
+- let pokemon = suspensify(fetchPokemon(1));
++ let initialPokemon = suspensify(fetchPokemon(1));
+```
 
-## Challenge
+### 3. Provide `initialPokemon` to `React.useState` as default
 
-- Add an `id` prop to `Pokemon`
-  - Use `2` for Ivysaur to prove that it works
-  - Take the `id` prop in `Pokemon`
-  - Pass it to `read()`
-  - Take id as an argument and use a template literal string to change to fetch pokemon
-- Now, we've stolen a DOM attribute. Talk about that.
+```diff
+// pokemon-detail.js #PokemonDetail
+- let [pokemonResource, setPokemonResource] = React.useState();
++ let [pokemonResource, setPokemonResource] = React.useState(initialPokemon);
+```
+
+### 4. Create an intermediate `pokemon` variable that `read()`s the `pokemonResource`
+
+```diff
+// pokemon-detail.js #PokemonDetail
++ let pokemn = pokemonResource.read();
+```
+
+### 5. Add a "Next" button to shuttle thru Pokemon
+
+```diff
+// pokemon-detail.js #PokemonDetail
+
++ <button
++   type="button"
++   onClick={() =>
++     setPokemonResource(suspensify(fetchPokemon(pokemon.id + 1)))
++   }
++ >
++   Next
++ </button>
+```
 
 ## Solution
 
