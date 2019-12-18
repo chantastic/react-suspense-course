@@ -12,7 +12,61 @@ However, knowing how to wrap promises for communication with `Suspense` and erro
 
 ## Exercise
 
-See [pokemon-detail.js](pokemon-detail.js)
+### 1. Add a the baseline "suspensify" function
+
+_WARNING:_
+This is a minimal reference for how to wrap your promises in Suspense.
+
+```diff
++ function suspensify(promise) {
++   let status = "pending";
++   let result;
++   let suspender = promise.then(
++     response => {
++       status = "success";
++       result = response;
++     },
++     error => {
++       status = "error";
++       result = error;
++     }
++   );
++
++   return {
++     read() {
++       if (status === "pending") {
++         throw suspender;
++       }
++       if (status === "error") {
++         throw result;
++       }
++       if (status === "success") {
++         return result;
++       }
++     }
++   };
++ }
+```
+
+### 2. Fetch a Pokemon from Pokeapi
+
+```diff
++ let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json())
+```
+
+### 3. Wrap the fetch request in the `suspensify` function
+
+```diff
+- let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json())
++ let pokemon = suspensify(fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()));
+```
+
+### 4. Call `pokemon.read()` in PokemonDetail to access data
+
+```diff
+- return <div>Static Pokemon</div>;
++ return <div>{pokemon.read().name}</div>;
+```
 
 ## Solution
 

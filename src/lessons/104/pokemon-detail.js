@@ -29,7 +29,7 @@ import React from "react";
 //   };
 // }
 
-// 2. Wrapp this fetch request in `suspensify`
+// 2. Wrap this fetch request in `suspensify`
 let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res =>
   res.json()
 );
