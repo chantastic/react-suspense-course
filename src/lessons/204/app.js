@@ -1,6 +1,5 @@
 import React from "react";
 import ErrorBoundary from "./error-boundary";
-import { DelaySpinner } from "./ui";
 import { fetchPokemon, fetchPokemonCollection, suspensify } from "./api";
 
 const PokemonDetail = React.lazy(() => import("./pokemon-detail"));

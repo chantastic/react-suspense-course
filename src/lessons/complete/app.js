@@ -1,11 +1,7 @@
 import React from "react";
 import ErrorBoundary from "./error-boundary";
-import {
-  fetchPokemon,
-  fetchPokemonCollection,
-  suspensify
-} from "./api";
-import { List, DelaySpinner } from "./ui";
+import { fetchPokemon, fetchPokemonCollection, suspensify } from "./api";
+import { List } from "./ui";
 import { PokemonContext } from "./pokemon";
 
 import "./styles.css";
@@ -17,9 +13,7 @@ let initialCollection = suspensify(fetchPokemonCollection());
 
 export default function App() {
   let [pokemonResource, setPokemonResource] = React.useState(initialPokemon);
-  let [collectionResource, setCollectionResource] = React.useState(
-    initialCollection
-  );
+  let [collectionResource] = React.useState(initialCollection);
   let [startTransition, isPending] = React.useTransition({ timeoutMs: 3000 });
   let deferredPokemonResource = React.useDeferredValue(pokemonResource, {
     timeoutMs: 3000

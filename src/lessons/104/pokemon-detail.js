@@ -29,11 +29,9 @@ import React from "react";
 //   };
 // }
 
-// 2. Fetch a pokemon from PokeAPI
+// 2. Fetch a pokemon from PokeAPI and store `pokemon` variable
+//    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
 // 3. Wrap this fetch request in the `suspensify` function
-let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res =>
-  res.json()
-);
 
 export default function PokemonDetail() {
   // 4. `pokemon` is now a resource with a `read()` function on it
