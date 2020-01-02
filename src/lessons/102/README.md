@@ -27,7 +27,7 @@ Let's learn they are used to catch errors thrown by promises.
 React's errors are great.  
 They'll tell you to go here to read more on setting up an `ErrorBoundary` component.
 
-### 3. Copy/Paste React's ceneric ErrorBoundary into the app
+### 3. Copy/Paste React's generic ErrorBoundary into the app
 
 ```diff
 // app.js
