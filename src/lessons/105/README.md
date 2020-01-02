@@ -37,7 +37,7 @@ Wrapped promises can be given to `useState` to communicate promise status for st
 
 ```diff
 // pokemon-detail.js #PokemonDetail
-+ let pokemn = pokemonResource.read();
++ let pokemon = pokemonResource.read();
 ```
 
 ### 5. Add a "Next" button to shuttle thru Pokemon
