@@ -1,16 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// ↓↓↓ 👋 Update this line to change the lesson ↓↓↓
-let lesson = "complete";
+// ↓↓↓ 👋 Update this line to change the lesson number ↓↓↓
+import Lesson from "./lessons/complete/app";
 
-const Lesson = React.lazy(() => import(`./lessons/${lesson}/app`));
 function App() {
-  return (
-    <React.Suspense fallback="Loading Lesson...">
-      <Lesson />
-    </React.Suspense>
-  );
+  return <Lesson />;
 }
 
 const rootElement = document.getElementById("root");
