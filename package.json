@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^0.0.0-experimental-b53ea6ca0",
+    "react": "^0.14.0",
     "react-dom": "^0.0.0-experimental-b53ea6ca0",
     "react-scripts": "3.2.0",
     "sleep-promise": "^8.0.1"
